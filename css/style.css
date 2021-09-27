@@ -20,7 +20,7 @@
 
 body {
     background: var(--color6);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     width: 100%;
     height: auto;
 }
@@ -120,7 +120,6 @@ form {
 
 form h5 {
     font-size: 2.9rem;
-    margin: 5px 0;
     color: #eee;
 }
 
@@ -210,7 +209,7 @@ form h5 {
     background: none;
     padding: 0.5rem 0.7rem;
     font-size: 1.2rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: #eee;
 }
 
@@ -249,7 +248,7 @@ a:hover {
 }
 
 .btn:hover {
-    background-position: right;
+    background-position: top;
     color: #fff;
 }
 
