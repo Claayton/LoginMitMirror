@@ -1,5 +1,6 @@
 @charset 'UTF8';
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 :root {
     --color1: #5021FA;
@@ -19,7 +20,7 @@
 }
 
 body {
-    /* background: var(--color6); */
+    background: var(--color6);
     font-family: 'Poppins', sans-serif;
     width: 100%;
     height: auto;
@@ -45,7 +46,7 @@ body {
     font-family: 'Fjalla One', sans-serif;
     text-decoration: none;
     color: var(--color4);
-    text-shadow: 1px 1px 1px rgb(133, 133, 133);
+    text-shadow: 1px 1px 1px #000;
     text-align: flex-start;
     font-size: 1.8rem;
     padding: 5px;
@@ -121,6 +122,7 @@ form {
 form h5 {
     font-size: 2.9rem;
     color: #eee;
+    font-family: 'Comfortaa', cursive;
 }
 
 .input-div {
@@ -256,6 +258,19 @@ a:hover {
     justify-content: center;
 }
 
+.footer {
+    font: normal;
+    font-family: 'Comfortaa', cursive;
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    color: var(--color8);
+    width: 100%;
+}
+
 @media screen and (max-width: 1000px) {
     form {
         width: 290px;
@@ -289,17 +304,15 @@ a:hover {
     .login-container {
         justify-content: center;
     }
-}
 
-.footer {
-    font: normal;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.8rem;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    position: fixed;
-    bottom: 0px;
-    color: var(--color8);
-    width: 100%;
+    .footer {
+        font-size: 0.4rem;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        position: sticky;
+        bottom: 0px;
+        color: var(--color8);
+        width: 100%;
+    }
 }
