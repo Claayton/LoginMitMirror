@@ -9,9 +9,9 @@
     --color5: #21D8FA;
     --color6: #292a2d;
     --color7: #101011;
+    --color8: #eee;
 }
 
-    --color8: #eee;
 * {
     box-sizing: border-box;
     margin: 0px;
