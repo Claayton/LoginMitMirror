@@ -228,7 +228,7 @@ a, .check {
 }
 
 a:hover {
-    color: #1D27DE;
+    color: var(--color4);
 }
 
 .btn {
@@ -240,7 +240,7 @@ a:hover {
     font-size: 1.2rem;
     outline: none;
     border: none;
-    background-image: linear-gradient(to bottom, #21D8FA, #5021FA);
+    background-image: linear-gradient(to right,var(--color2), var(--color5));
     cursor: pointer;
     color: #eee;
     text-transform: uppercase;
@@ -250,7 +250,7 @@ a:hover {
 }
 
 .btn:hover {
-    background-position: top;
+    background-image: linear-gradient(to right,var(--color2), var(--color5), var(--color5));
     color: #fff;
 }
 
