@@ -60,12 +60,6 @@ async function readForm(){
         window.location.href='erro.html'
     });
 }
-// function app() {
-//     console.log("App iniciando")
-//     readUsers()
-// }
-
-// app()
 
 // Função para enviar os dados para a API
 // function makePost(url, body) {
