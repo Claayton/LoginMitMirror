@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MitMirror-Welcome</title>
+    <link rel="shortcut icon" href="img/profile.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/home.css">
+    <style>
+        .main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            color: #eee;
+            font-size: 3rem;
+        }
+
+        h1 {
+            color: #eee;
+            font-size: 2rem;
+        }
+
+        p {
+            padding-bottom: 20px;
+            color: #ddd;
+            font-size: 1.2rem;
+        }
+
+        .p {
+            width: 800px;
+        }
+
+        a {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            display: block;
+            width: 30%;
+            height: 50px;
+            border-radius: 25px;
+            margin: 5px;
+            font-size: 1.2rem;
+            outline: none;
+            border: none;
+            background-image: linear-gradient(to right,var(--color2), var(--color5));
+            cursor: pointer;
+            color: #eee;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            background-size: 200%;
+            transition: .5s;
+        }
+
+        .btn:hover {
+            background-image: linear-gradient(to right,var(--color2), var(--color5), var(--color5));
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Bem vindo ao MitMirror!</h1>
+        <div class="p">
+            <P>Estamos trabalhando ao máximo para concluir as funcionalidades do app,
+                Enquanto ele não fica pronto você pode se divertir com as aulas do professor:</P>
+        </div>
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/1alpIMS86c4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p>Desculpe o transtorno.</p>
+        <a href="index.html">
+            <input type="button" value="desculpar" class="btn">
+        </a>
+        <a href="manutencao.html">
+            <input type="button" value="fodase" class="btn">
+        </a>
+    </div>
+</body>
+</html>

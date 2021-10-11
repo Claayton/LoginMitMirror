@@ -52,7 +52,7 @@ async function readForm(){
 
         if (token && status === 200) {
             setCookie('Authorization-token', token, 0)
-            window.location.href='manutencao.html'
+            window.location.href='welcome.html'
         }
     }).catch((error) => {
         console.log(error);
