@@ -46,12 +46,13 @@ async function readForm(){
         email: formEmail.value,
         password: formPassword.value
       }
-    axios.post('https://mitmirror.herokuapp.com/api/auth/', body).then((response) => {
+    const request = await axios.post('https://mitmirror.herokuapp.com/api/auth/', body, {headers: {"Permissions-Policy": "interest-cohort=()"}}).then((response) => {
         let status = response.status
+        let headers = response.headers
         let token = response.data['Authorization']
 
         if (token && status === 200) {
-            setCookie('Authorization-token', token, 0)
+            // setCookie('Authorization-token', token, 0)
             window.location.href='welcome.html'
         }
     }).catch((error) => {
