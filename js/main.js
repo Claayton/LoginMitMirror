@@ -1,3 +1,4 @@
+// Animações nos campos de formulário
 const inputs = document.querySelectorAll('.input');
 
 function focusFunc(){
@@ -17,8 +18,6 @@ inputs.forEach(input => {
     input.addEventListener('blur', blurFunc);
 });
 
-
-
 // Recebe todos os usuários
 // async function readUsers(){
 //     const response = await axios.get('http://127.0.0.1:5000/api/users/')
@@ -27,6 +26,7 @@ inputs.forEach(input => {
 // }
 
 
+// Seta cookies no navegador
 function setCookie(cname,cvalue,days) {
     let expires = "";
     if (days != 0) {
@@ -40,25 +40,37 @@ function setCookie(cname,cvalue,days) {
 }
 
 async function readForm(){
+    let loading = document.querySelector('#loading')
+    loading.style.display = "block"
     let formEmail = window.document.getElementById('email')
     let formPassword = window.document.getElementById('password')
     let body = {
         email: formEmail.value,
         password: formPassword.value
       }
-    const request = await axios.post('https://mitmirror.herokuapp.com/api/auth/', body, {headers: {"Permissions-Policy": "interest-cohort=()"}}).then((response) => {
+    await axios.post('https://mitmirror.herokuapp.com/api/auth/', body, {headers: {"Permissions-Policy": "interest-cohort=()"}})
+    .then((response) => {
         let status = response.status
         let headers = response.headers
         let token = response.data['Authorization']
 
         if (token && status === 200) {
-            // setCookie('Authorization-token', token, 0)
+            loading.style.display = "none"
+            console.log(`Deu tudo certo graças a Deus!`)
             window.location.href='welcome.html'
+            // setCookie('Authorization-token', token, 0)
         }
     }).catch((error) => {
-        console.log(error);
-        console.log('Ops, algo deu errado!');
-        window.location.href='erro.html'
+        if (error == 'Error: Request failed with status code 403' ||
+            error == 'Error: Request failed with status code 401') {
+            let register = document.querySelector('#notfound')
+            register.style.display = "block"
+            loading.style.display = "none"
+        } else if (error == 'Error: Request failed with status code 500') {
+            readForm()
+        }
+
+        // window.location.href='erro.html'
     });
 }
 

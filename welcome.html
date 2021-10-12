@@ -15,25 +15,30 @@
             text-align: center;
             align-items: center;
             color: #eee;
-            font-size: 3rem;
-        }
-
-        h1 {
-            color: #eee;
-            font-size: 2rem;
         }
 
         p {
-            padding-bottom: 20px;
             color: #ddd;
             font-size: 1.2rem;
         }
 
         .p {
-            width: 800px;
+            width: 50%;
         }
 
-        a {
+        .video {
+            width: 106vh;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .video > iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .main a {
             width: 100%;
             display: flex;
             justify-content: center;
@@ -64,11 +69,25 @@
     </style>
 </head>
 <body>
+    <header id="header-main">
+        <div id="header-container">
+        <h1 class="title-main">
+            <a href="manutencao.html">MitMirroR</a>
+        </h1>
+        <nav class="navbar-main">
+            <ul>
+            <li><a href="manutencao.html">Profile</a></li>
+            <li><a href="manutencao.html">Register</a></li>
+            <li><a href="manutencao.html">About</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
     <div class="main">
         <h1>Bem vindo ao MitMirror!</h1>
         <div class="p">
             <P>Estamos trabalhando ao máximo para concluir as funcionalidades do app,
-                Enquanto ele não fica pronto você pode se divertir com as aulas do professor:</P>
+            Enquanto ele não fica pronto você pode se divertir com uma das aulas do professor:</P>
         </div>
         <div class="video">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/1alpIMS86c4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
