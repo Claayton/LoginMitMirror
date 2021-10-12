@@ -268,7 +268,7 @@ a:hover {
 
 .loading {
     height: auto;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: flex-start
 }
@@ -278,7 +278,7 @@ a:hover {
     position: absolute;
     width:100px;
     user-select: none;
-    display: none;
+    display: block;
 }
 
 .register {

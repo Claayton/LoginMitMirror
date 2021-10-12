@@ -40,14 +40,16 @@ function setCookie(cname,cvalue,days) {
 }
 
 async function readForm(){
-    let loading = document.querySelector('#loading')
-    loading.style.display = "block"
+    let loading = document.querySelector('.loading')
+    let register = document.querySelector('#notfound')
     let formEmail = window.document.getElementById('email')
     let formPassword = window.document.getElementById('password')
     let body = {
         email: formEmail.value,
         password: formPassword.value
       }
+    loading.style.display = "flex"
+
     await axios.post('https://mitmirror.herokuapp.com/api/auth/', body, {headers: {"Permissions-Policy": "interest-cohort=()"}})
     .then((response) => {
         let status = response.status
@@ -63,7 +65,6 @@ async function readForm(){
     }).catch((error) => {
         if (error == 'Error: Request failed with status code 403' ||
             error == 'Error: Request failed with status code 401') {
-            let register = document.querySelector('#notfound')
             register.style.display = "block"
             loading.style.display = "none"
         } else if (error == 'Error: Request failed with status code 500') {
