@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MitMirror-Register</title>
+        <link rel="shortcut icon" href="img/profile.svg" type="image/x-icon">
+        <link rel="stylesheet" href="css/home.css">
+        <style>
+            body {
+                color: white;
+                font-size: 2rem;
+            }
+
+            div {
+                display: flex;
+                justify-content: space-between;
+            }
+        </style>
+    </head>
+    <body>
+        <form onsubmit="pushForm()">
+            <div class="name">
+                <label for="name">Name</label>
+                <input type="text" id="name" autocomplete="off">
+            </div>
+            <div class="lastname">
+                <label for="lastname">Last name</label>
+                <input type="text" id="lastname" autocomplete="off">
+            </div>
+            <div class="email">
+                <label for="email">Email</label>
+                <input type="email" id="email" autocomplete="off">
+            </div>
+            <div class="username">
+                <label for="username">Username</label>
+                <input type="text" id="username" autocomplete="off">
+            </div>
+            <div class="password">
+                <label for="password">Password</label>
+                <input type="password" autocomplete="off">
+            </div>
+            <div class="confirm">
+                <label for="confirm">Confirm</label>
+                <input type="password" id="confirm" autocomplete="off">
+            </div>
+            <input type="submit" value="submit">
+        </form>
+        <script>
+            async function pushForm() {
+                let name = document.querySelector('#name')
+                let lastname = document.querySelector('#lastname')
+                let email = document.querySelector('#email')
+                let username = document.querySelector('#username')
+                let password = document.querySelector('#password')
+                let confirm = document.querySelector('#confirm')
+                let body = {
+                    name: name.value + lastname.value,
+                    email: email.value,
+                    username: username.value,
+                    password: password.value
+                }
+            }
+
+            await axios.post('https://mitmirror.herokuapp.com/api/users/', body, {headers: {"Permissions-Policy": "interest-cohort=()", "token": token}})
+            .then((response) => {
+                let response = response.data
+            }).catch((error) => {
+                console.log('Ops, algo deu errado!')
+                console.log(error)
+                // window.location.href='erro.html'
+            });
+        </script>
+    </body>
+</html>
